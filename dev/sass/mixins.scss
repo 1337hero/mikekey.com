@@ -1,0 +1,26 @@
+/* FONT LOCK */
+@mixin rfs($value, $property: font-size) {
+  // Check value is in **rem**.
+  @if unit($value) != rem {
+    @error "`#{$value}` has not a valid unit. Use `rem`."
+  }
+
+  // Hardcoded config
+  $base: 1rem;
+  
+  // Calculate the minimum value
+  $min: $base + $value / 10;
+
+  @if $min >= $value {
+    #{$property}: $value;
+  } @else {
+    // Calculate the variable part
+    $variable: #{ ($value * 0.9 - $base) / 0.75rem }vw;
+    
+    #{$property}: calc(#{$min} + #{$variable});
+
+    @media (min-width: 1200px) {
+      #{$property}: $value;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+
+.block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgb(3 22 51 / 15%);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    min-height: 4rem;
+    margin-bottom: 1rem!important;
+
+    & > i {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 4rem;
+        min-height: 4rem;
+        height: auto;
+        background-color: map.get($theme-colors, "coffee");
+        color: #fff;
+        font-size: 1.333rem;
+    }
+    & > span {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
+
+
+.products,
+.booklist {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.product-box,
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}

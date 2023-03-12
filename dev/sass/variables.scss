@@ -1,0 +1,58 @@
+/* FONTS */
+$default: sans-serif;
+$main-font: 'Open Sans', sans-serif;
+
+
+/* FONT SIZES */
+$default-size: 18px;
+$h1-size: 5rem;
+$h2-size: 1rem;
+$h3-size: .95rem;
+$body-size: 0.9rem;
+
+
+/* FONT COLORS */
+$titles: #03213f;
+$text: #0F0E0E;
+$links: #0F0E0E;
+$hover: #0F0E0E;
+
+
+/* PAGE COLORS */
+$body: #f9f9f9;
+$highlight: #0077B5;
+
+
+/* THEME COLORS */
+$theme-colors: (
+    "coffee":    #05ce78,
+    "friendly":  #00AEEF,
+    "default":   #1f232b,
+    "primary":   #0095ff,
+    "secondary": #28a745,
+    "youtube":   #FF0000,
+    "facebook":  #1877f2,
+    "linkedin":  #2867b2,
+    "twitter":   #1da1f2
+);
+
+
+/* Brand Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.button {
+    .--coffee {
+        color: #100a26;
+        background-color: #ffdd00; 
+
+    }
+}
+
+// .button.button-coffee {
+//   color: #100a26;
+//   background-color: #ffdd00;
+// }
+// .button.button-coffee:hover,
+// .button.button-coffee:focus {
+//   filter: brightness(90%);
+// }

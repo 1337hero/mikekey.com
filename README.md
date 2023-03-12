@@ -1,3 +1,13 @@
-# [Mike Key](https://mikekey.com) - Just a humble blog repo
+# [Mike Key](https://mikekey.com) - LinkTree sucks 😜
 
-It's all a work in progress. But I find myself with more time now. And finally coding can be a fun hobby again and not a chore that sucks the life out of my very existence.
+This is my own customized link based landing page for social media profiles. They go here instead of directly to my blog.
+
+## To-Do List
+
+1.) Need to build email signup
+
+2.) Want to Embed Most Recent YouTube Video
+
+3.) Want to further templatize this so others can fork it
+
+4.) On the templatization front - want to use markdown or a settings files like Jekyll to update product links and other links. Have to figure out how to do that.

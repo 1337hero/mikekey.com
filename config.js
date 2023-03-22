@@ -15,5 +15,8 @@ module.exports = {
     "facebook": "https://www.facebook.com/justmikekey",
     "linkedin": "https://www.linkedin.com/in/1337hero/",
     "twiiter": "https://twitter.com/justmikekey",
-    "tiktok": "https://www.tiktok.com/@justmikekey"
+    "tiktok": "https://www.tiktok.com/@justmikekey",
+
+    /*-- Connect Buttons --*/
+    "calendly": "https://calendly.com/justmikekey/connect-with-mike"
 }

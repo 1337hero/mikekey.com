@@ -14,6 +14,10 @@ This is my own customized link based landing page for social media profiles. Vis
 
 - [ ] 5. Build out my own QR code to import contact card
 
+- [ ] 6. Write up a better Readme file
+
+- [ ] 7. When project is completed, convert this into a template repo people can fork and build on.
+
 ## Done
 
 ~~Templatize with configuration file~~

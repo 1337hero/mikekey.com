@@ -1,110 +1,116 @@
-*, *:after, *:before {
-    position: relative;
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+  position: relative;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: $default;
-    font-size: $default-size;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -moz-font-feature-settings: "liga" on;
+  font-family: $default;
+  font-size: $default-size;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background: $body;
-    font-size: $body-size;
-    font-family: $main-font;
-    color: $text;
+  margin: 0;
+  padding: 0;
+  background: $body;
+  font-size: $body-size;
+  font-family: $main-font;
+  color: $text;
 }
 
-::-moz-selection { background: $highlight; }
-::selection { background: $highlight; }
+::selection {
+  background: $highlight;
+}
 
 a {
-    color: $links;
-    text-decoration: none;
-    &:hover {
-       color: $hover;
-    }
+  color: $links;
+  text-decoration: none;
+
+  &:hover {
+    color: $hover;
+  }
 }
 
 strong {
-    font-weight: bold;
-}
-
-main {
-    max-width: 720px;
-    margin: 50px auto;
-    @media (max-width:720px) { 
-        margin: 25px auto;
-        padding-right: 5%;
-        padding-left: 5%;
-    }
+  font-weight: bold;
 }
 
 main,
 header {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  max-width: 720px;
+  margin: 50px auto;
+
+  @media (max-width: 720px) {
+    margin: 25px auto;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
 }
 
 header {
-    align-items: center;
-    margin-bottom: 50px;
-    text-align: center;
-    @media (max-width:720px) {
-        margin-bottom: 25px;
-    }
+  align-items: center;
+  margin-bottom: 50px;
+  text-align: center;
+
+  @media (max-width: 720px) {
+    margin-bottom: 25px;
+  }
 }
 
-/* ELEMENTS ON PAGE */
 .avatar {
-    display: block;
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    background-position: center;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    img {
-        width: 100%;
-        height: auto;
-    }
-    @media (max-width:720px) {
-        margin-bottom: 10px;
-        width: 128px;
-        height: 128px;
-    }
+  display: block;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-bottom: 15px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 720px) {
+    margin-bottom: 10px;
+    width: 128px;
+    height: 128px;
+  }
 }
 
 .socials {
-    display: block;
-    margin-bottom: 75px;
-    @media (max-width:720px) {
-        margin-bottom: 25px;
-    }
+  display: block;
+  margin-bottom: 75px;
+
+  @media (max-width: 720px) {
+    margin-bottom: 25px;
+  }
 }
 
 .social-media {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
 }
 
 .connections,
 .gear {
-    margin-bottom: 50px;
-    @media (max-width:720px) {
-        margin-bottom: 25px;
-    }
+  margin-bottom: 50px;
+
+  @media (max-width: 720px) {
+    margin-bottom: 25px;
+  }
 }
-
-
-

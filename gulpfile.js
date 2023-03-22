@@ -3,10 +3,12 @@
 
 // Plugins
 const gulp = require('gulp'),
+    nunjucksRender = require('gulp-nunjucks-render'),
     browserSync = require('browser-sync').create(),
     partials = require('gulp-inject-partials'),
     htmlmin = require('gulp-htmlmin'),
     concat = require('gulp-concat'),
+    config = require('./config'),
     rename = require('gulp-rename'),
     clean = require('gulp-clean-css'),
     webp = require('gulp-webp'),
@@ -45,6 +47,7 @@ function html() {
             end: '%>',
             removeTags: true
         }))
+        .pipe(nunjucksRender({data: config}))
         .pipe(htmlmin({
             collapseWhitespace: true,
             removeComments: true

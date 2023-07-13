@@ -13,7 +13,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:800|Cardo:regular|Poppins:500|Poppins:300|Poppins:regular|Poppins:600" rel="stylesheet">
 
 
         <link href="./css/styles.css" rel="stylesheet" type="text/css">
@@ -21,11 +21,17 @@
 
     </head>
     <body>
+        <header aria-label="quick summary">
+            <div class="top-bar">
+                <h1>Mike Key</h1>
+                <h2>Helping Entrepnuers grow their impact</h2>
+            </div>
+            <div class="hero-image">
+                <img src="/img/Mike-Key-Profile-Pic-Master-Banner_07-11-2023_001.webp">
+            </div>
+        </header>
         <main class="container">
             <!-- Intro --->
-            <header aria-label="quick summary">
-                <% inc/header.html %>
-            </header>
             <!-- Social Media Links --->
             <article class="socials" aria-label="social media links">
                 <div class="social-media">
@@ -33,9 +39,9 @@
                 </div>
             </article>
             <!-- Email Signup --->
-            <article class="emails" aria-label="stay up to date">
+            <!-- <article class="emails" aria-label="stay up to date">
                 <% inc/email-signup.html %>
-            </article>
+            </article> -->
             <!-- Let's Connect --->
             <article class="connections" aria-label="Let's Connect">
                 <h3 class="subtitle">Let's Connect</h3>
@@ -54,12 +60,17 @@
             </article>
 
             <!-- Discounts List --->
-            <article aria-label="Let's Connect">
+            <!-- <article aria-label="Let's Connect">
                 <h3 class="subtitle">My Other Recommendations</h3>
                 <% inc/discounts.html %>
-            </article>
+            </article> -->
 
         </main>
+
+        <footer>
+            Made with by me
+            cuase LinkTree Sucks!
+        </footer>
 
         <% inc/includes.html %>
     </body>

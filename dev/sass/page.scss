@@ -114,3 +114,23 @@ header {
     margin-bottom: 25px;
   }
 }
+
+
+/* to organize at future date */
+.top-bar {
+    padding: 10px 0;
+    h2 {
+        margin-bottom: 0;
+    }
+}
+.hero-image {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}

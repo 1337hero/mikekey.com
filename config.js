@@ -6,7 +6,7 @@ module.exports = {
     /*-- Intro --*/
     "avatar": "./img/mike.webp",
     "pageTitle": "Mike Key",
-    "subTitle": "Content Creator & RE Investor",
+    "subTitle": "",
     "tagline": "I help YOU create engaging content & build a personal brand",
 
     /*-- Social Media Links --*/

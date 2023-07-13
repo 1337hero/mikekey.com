@@ -4,15 +4,19 @@
 // Plugins
 const gulp = require('gulp'),
     nunjucksRender = require('gulp-nunjucks-render'),
+    autoprefixer = require('autoprefixer'),
     browserSync = require('browser-sync').create(),
     partials = require('gulp-inject-partials'),
+    cssnano = require('cssnano'),
     htmlmin = require('gulp-htmlmin'),
+    postcss = require('gulp-postcss'),
     concat = require('gulp-concat'),
     config = require('./config'),
     rename = require('gulp-rename'),
     clean = require('gulp-clean-css'),
     webp = require('gulp-webp'),
     maps = require('gulp-sourcemaps'),
+
     sass = require('gulp-sass')(require('sass'));
 
 // File Paths
@@ -32,6 +36,7 @@ function css() {
     return gulp.src(paths.scss)
         .pipe(maps.init())
         .pipe(sass().on('error', sass.logError))
+        .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(clean()) // for minifying the file
         .pipe(rename('styles.css'))
         .pipe(maps.write())

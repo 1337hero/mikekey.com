@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Layout from "../../layouts/Layout.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import placeholder1 from "../../assets/blog-placeholder-1.jpg";
+import placeholder2 from "../../assets/blog-placeholder-2.jpg";
+import placeholder3 from "../../assets/blog-placeholder-3.jpg";
+import placeholder4 from "../../assets/blog-placeholder-4.jpg";
+import placeholder5 from "../../assets/blog-placeholder-5.jpg";
+
+const placeholders = [
+  placeholder1,
+  placeholder2,
+  placeholder3,
+  placeholder4,
+  placeholder5,
+];
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <section class="py-20">
+    <div class="container-content">
+      <div class="flex items-center justify-between mb-12">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-2">
+            All Posts
+          </h2>
+          <p>Every post in the archive</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {
+          posts.map((post, index) => (
+            <article
+              class="group bg-white dark:bg-gray-600 overflow-hidden"
+              style={`animation-delay: ${index * 100}ms`}
+            >
+              <a href={`/blog/${post.id}/`} class="block">
+                {post.data.heroImage ? (
+                  <Image
+                    width={720}
+                    height={360}
+                    src={post.data.heroImage}
+                    alt={post.data.title}
+                  />
+                ) : (
+                  <Image
+                    width={720}
+                    height={360}
+                    src={placeholders[index % placeholders.length]}
+                    alt={post.data.title}
+                  />
+                )}
+
+                <div class="p-4">
+                  <time class="block text-xs mb-1">
+                    <FormattedDate date={post.data.date} />
+                  </time>
+                  <h3 class="text-xl font-display font-bold transition-colors">
+                    {post.data.title}
+                  </h3>
+                </div>
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>

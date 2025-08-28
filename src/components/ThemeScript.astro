@@ -1,0 +1,19 @@
+---
+---
+
+<script is:inline>
+  // Minimal, FOUC-safe theme application
+  (() => {
+    try {
+      const storageKey = 'theme-preference';
+      const stored = localStorage.getItem(storageKey);
+      const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      const theme = stored || system;
+      const root = document.documentElement;
+      if (theme === 'dark') root.classList.add('dark');
+      else root.classList.remove('dark');
+    } catch (_) {
+      // Ignore storage access errors
+    }
+  })();
+  </script>

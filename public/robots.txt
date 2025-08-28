@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Point crawlers to the generated sitemap index
+Sitemap: https://mikekey.com/sitemap-index.xml
+

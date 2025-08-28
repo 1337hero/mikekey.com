@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon/components";
+const today = new Date();
+---
+
+<footer class="mt-auto">
+  <div class="container-content py-12">
+    <div
+      class="mt-8 pt-8 border-t border-gray-200 text-center text-sm"
+    >
+      <p>
+        &copy; <strong>Michael Key</strong> from 2006 to this magical moment in {
+          today.getFullYear()
+        }. All rights reserved.
+      </p>
+      <p class="inline">
+        Crafted with <Icon name="mdi:cards-heart" class="inline" size={20} aria-hidden="true" /> by <a href="https://1337hero.com" target="_blank" rel="author">1337Hero</a>.
+      </p>
+    </div>
+  </div>
+</footer>

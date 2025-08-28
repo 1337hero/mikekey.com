@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Layout from "../../layouts/Layout.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+
+const notes = (await getCollection("notes")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<Layout title={`${SITE_TITLE} — Notes`} description={SITE_DESCRIPTION}>
+  <section class="py-20">
+    <div class="container-content">
+      <div class="flex items-center justify-between mb-12">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-2">
+            Notes
+          </h2>
+          <p>Shorter thoughts and links</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {
+          notes.map((item, index) => (
+            <article class="group bg-white overflow-hidden" style={`animation-delay: ${index * 100}ms`}>
+              <a href={`/notes/${item.id}/`} class="block p-4">
+                <time class="block text-xs mb-1">
+                  <FormattedDate date={item.data.date} />
+                </time>
+                <h3 class="text-xl font-display font-bold transition-colors">
+                  {item.data.title}
+                </h3>
+                {item.data.description && (
+                  <p class="text-sm mt-1">
+                    {item.data.description}
+                  </p>
+                )}
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>

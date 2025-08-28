@@ -1,0 +1,224 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { Icon } from "astro-icon/components";
+import HeroImg from "../assets/hero.png";
+import placeholder1 from "../assets/blog-placeholder-1.jpg";
+import placeholder2 from "../assets/blog-placeholder-2.jpg";
+import placeholder3 from "../assets/blog-placeholder-3.jpg";
+import placeholder4 from "../assets/blog-placeholder-4.jpg";
+import placeholder5 from "../assets/blog-placeholder-5.jpg";
+import { getCollection } from "astro:content";
+
+const placeholders = [
+  placeholder1,
+  placeholder2,
+  placeholder3,
+  placeholder4,
+  placeholder5,
+];
+
+const posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 6);
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <Hero
+    title="Just Mike Key."
+    subtitle="Husband. Father. Builder."
+    description="This site is my notebook — part essays, part experiments, part reminders to myself."
+    alignment="center"
+    backgroundImage={HeroImg.src}
+  />
+
+  <section class="py-20">
+    <div class="container-content">
+      <div class="flex items-center justify-between mb-12">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-2">
+            Most Recent Posts
+          </h2>
+          <p>
+            Thoughts on business, life, and everything in between
+          </p>
+        </div>
+        <a
+          href="/blog"
+          class="hidden md:flex items-center hover:underline font-medium group"
+        >
+          View all posts
+          <svg
+            class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {
+          posts.map((post, index) => (
+            <article
+              class="group bg-gray-300 dark:bg-gray-600 overflow-hidden"
+              style={`animation-delay: ${index * 100}ms`}
+            >
+              {post.data.heroImage && (
+                <div class="aspect-video bg-gradient-to-br">
+                  <img
+                    src={post.data.heroImage.src}
+                    alt={post.data.title}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+              {!post.data.heroImage && (
+                <div class="aspect-video">
+                  <img
+                    src={placeholders[index % placeholders.length].src}
+                    alt={post.data.title}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-3">
+                  <time class="text-xs">
+                    {post.data.date.toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </time>
+                </div>
+
+                <h3 class="text-xl font-display font-bold mb-2 line-clamp-2">
+                  <a href={`/blog/${post.id}`} class="hover:underline">
+                    {post.data.title}
+                  </a>
+                </h3>
+
+                {post.data.description && (
+                  <p class="text-sm line-clamp-3 mb-4">
+                    {post.data.description}
+                  </p>
+                )}
+
+                <a
+                  href={`/blog/${post.id}`}
+                  class="inline-flex items-center text-sm font-medium hover:underline group/link"
+                >
+                  Read more
+                  <svg
+                    class="w-3 h-3 ml-1 transform group-hover/link:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="mt-12 text-center md:hidden">
+        <a href="/blog" class="inline-flex items-center hover:underline font-medium group">
+          View all posts
+          <svg
+            class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="container-content">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">
+          A bit about myself
+        </h2>
+        <p class="text-lg leading-relaxed mb-8">
+          This site is my little corner of the internet — a place where I've
+          been writing, tinkering, and experimenting for years. It's gone
+          through a few lives already: from WordPress in the early blogging
+          days, to Jekyll for that developer control, and now Astro where I'm
+          bringing old content back to life and mixing it with new ideas.
+        </p>
+        <p class="text-lg leading-relaxed">
+          I think of mk3y.com as both a personal journal and a public lab
+          notebook — a place to explore ideas, share lessons learned, and
+          occasionally break things in public.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="py-20">
+    <div class="container-content">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-6 uppercase">
+          Me around the web
+        </h2>
+        <p class="text-lg leading-relaxed mb-8">
+          You can find me across a few other digital neighborhoods. Feel free to
+          connect, share, or just explore.
+        </p>
+        <div class="flex flex-col justify-center space-x-6">
+          <span>
+            <Icon name="fa7-brands:instagram" size={32} class="inline-block" /> Instagram
+          </span>
+          <span>
+            <Icon name="fa7-brands:youtube" size={32} class="inline-block" /> Youtube
+          </span>
+          <span>
+            <Icon
+              name="fa7-brands:github"
+              size={32}
+              class="inline-block"
+            /> Github</span
+          >
+          <span>
+            <Icon
+              name="fa7-brands:x-twitter"
+              size={32}
+              class="inline-block"
+            /> (formerly Twitter)</span
+          >
+          <span>
+            <Icon
+              name="fa7-brands:linkedin-in"
+              size={32}
+              class="inline-block"
+            /> LinkedIn</span
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

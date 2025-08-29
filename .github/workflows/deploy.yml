@@ -1,39 +1,90 @@
-name: Deploy static site
+name: Deploy My Astro Site
 
 on:
   push:
     branches: [ "prod" ]
 
+concurrency:
+  group: mikekey.com-prod
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  deployments: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: Production
+      url: https://mikekey.com
+
+    env:
+      SITE_URL: https://mikekey.com
+      SSH_HOST: ${{ secrets.SSH_HOST }}        # 143.198.155.134
+      SSH_USER: ${{ secrets.SSH_USER }}        # deploy
+      SSH_PORT: ${{ secrets.SSH_PORT }}        # 7989
+      DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}  # /var/www/mikekey.com
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Choose ONE runtime. Bun (fast) or Node+pnpm. Here’s Bun:
+      # ---------- Bun setup + caching ----------
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
+      - name: Cache Bun deps
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
+
       - name: Install deps
         run: bun install --frozen-lockfile
 
-      - name: Build
-        run: bun run build
-        # Astro builds to ./dist by default
-
-      - name: Setup SSH
+      # Optional build cache (kept, but we still build to guarantee freshness)
+      - name: Compute build cache key
+        id: cache-key
         run: |
-          install -m 600 -D /dev/stdin ~/.ssh/id_ed25519 <<'EOF'
-          ${{ secrets.SSH_PRIVATE_KEY }}
-          EOF
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          echo "key=${{ runner.os }}-build-${{ hashFiles('**/*.{js,jsx,ts,tsx,css,scss,html,astro,md,mdx}', 'bun.lockb') }}" >> $GITHUB_OUTPUT
+
+      - name: Restore build cache
+        uses: actions/cache@v4
+        with:
+          path: dist
+          key: ${{ steps.cache-key.outputs.key }}
+
+      - name: Build
+        run: bun run build   # Astro outputs ./dist
+
+      # ---------- (Nice to have) Upload dist as artifact ----------
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          if-no-files-found: error
+          retention-days: 7
+
+      # ---------- SSH + Deploy ----------
+      - name: Start SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Ensure target dir exists
+        run: |
+          ssh -p "$SSH_PORT" -o StrictHostKeyChecking=accept-new "$SSH_USER@$SSH_HOST" "mkdir -p '$DEPLOY_PATH'"
 
       - name: Deploy via rsync
         run: |
           rsync -az --delete \
-            ./dist/ \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH || '/var/www/mikekey.com' }}/
+            --chown=${SSH_USER}:www-data --chmod=D2775,F664 \
+            --omit-dir-times \
+            -e "ssh -p $SSH_PORT -o StrictHostKeyChecking=accept-new" \
+            ./dist/ "$SSH_USER@$SSH_HOST:$DEPLOY_PATH/"

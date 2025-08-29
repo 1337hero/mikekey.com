@@ -1,6 +1,8 @@
 ---
 title: "5 Reasons Not to Get a JOB"
 date: 2009-12-23
+description: ''
+heroImage: '../../assets/images/blog/blog-placeholder-1.jpg'
 ---
 
 

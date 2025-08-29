@@ -1,6 +1,8 @@
 ---
 title: "4 Ways To Be Richer"
 date: 2009-12-27
+description: ''
+heroImage: '../../assets/images/blog/blog-placeholder-4.jpg'
 ---
 
 

@@ -9,8 +9,6 @@ This is a wrong way of thinking; one that needs to change. **If you want somethi
 
 I’m learning this first hand. For years I talked about business and being successful. In reality I was waiting for success to land in my lap. I was hoping it would be handed to me with the least effort possible, and in turn my first couple of businesses were mediocre. I applied the least amount of effort to everything I did.
 
-<!--more-->
-
 And then one day a light bulb went off.
 
 I’ve found a lot of success already, because I&#8217;m pouring blood, sweat and tears into making it happen. I&#8217;m getting out there and hitting the pavement, shaking hands, staying up late working on projects, making phone calls, doing follow ups, going to networking events, building my following on twitter, keeping up with it on facebook, etc. I’m putting in the work, not just sitting back and hoping it will come to me. I stay up late and fry my eyes with two 24inch computer screens, doing favors, hoping for some return. I&#8217;m taking a huge risk on all of this right now. [But with risk, comes great rewards][1]. If this thing is going to happen, I’m going to make it happen.

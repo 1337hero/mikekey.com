@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import type { ImageMetadata } from "astro";
-import FallbackImage from "../assets/blog-placeholder-1.jpg";
+import FallbackImage from "../assets/images/hero.png";
 import { SITE_TITLE } from "../consts";
 import ThemeScript from "./ThemeScript.astro";
 
@@ -16,6 +16,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, image = FallbackImage } = Astro.props;
 ---
 
+<!-- Keep <title> first and isolated to avoid any parsing quirks -->
+<title>{title}</title>
+
 <!-- Theme Script -->
 <ThemeScript />
 
@@ -24,40 +27,30 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
-<link
-  rel="alternate"
-  type="application/rss+xml"
-  title={SITE_TITLE}
-  href={new URL("rss.xml", Astro.site)}
-/>
+<link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={new URL("rss.xml", Astro.site)} />
 <meta name="generator" content={Astro.generator} />
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inria+Serif:wght@300;400;700&family=Poppins:wght@300;400;500;600&display=swap"
-/>
+<!-- Fonts: preload critical local font files -->
+<link rel="preload" href="/fonts/outfit/outfit-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/atkinson/atkinson-hyperlegible-regular.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
 <meta name="title" content={title} />
-<meta name="description" content={description} />
+<meta name="description" content={description ?? ''} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
+<meta property="og:description" content={description ?? ''} />
 <meta property="og:image" content={new URL(image.src, Astro.url)} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
+<meta property="twitter:description" content={description ?? ''} />
 <meta property="twitter:image" content={new URL(image.src, Astro.url)} />

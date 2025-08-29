@@ -1,6 +1,8 @@
 ---
 title: "5 Reasons To Start A Business in a Down Economy"
 date: 2009-12-25
+description: ''
+heroImage: '../../assets/images/blog/blog-placeholder-3.jpg'
 ---
 
 I am in the mindset that now is the best time to start a business, even with our economy in the dumps. If you are thinking about starting a business but are concerned with the economy, here are my 5 reasons why now is the time to launch your business.

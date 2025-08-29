@@ -3,7 +3,6 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from "@tailwindcss/vite";
 import compressor from 'astro-compressor';
 import icon from 'astro-icon';
-import pagefind from 'astro-pagefind';
 import purgecss from 'astro-purgecss';
 import { defineConfig } from 'astro/config';
 import fs from 'node:fs/promises';
@@ -28,10 +27,10 @@ export default defineConfig({
                 if (pathname === '/') {
                     data.changefreq = 'daily';
                     data.priority = 1.0;
-                } else if (pathname === '/blog/' || pathname === '/notes/') {
+                } else if (pathname === '/blog/') {
                     data.changefreq = 'daily';
                     data.priority = 0.9;
-                } else if (pathname.startsWith('/blog/') || pathname.startsWith('/notes/')) {
+                } else if (pathname.startsWith('/blog/')) {
                     data.changefreq = 'weekly';
                     data.priority = 0.7;
                 } else if (pathname === '/about/' || pathname === '/now/') {
@@ -45,10 +44,6 @@ export default defineConfig({
                     if (p.startsWith('/blog/')) {
                         const id = trim(p.slice('/blog/'.length));
                         return path.join(root, 'src', 'content', 'blog', id + '.md');
-                    }
-                    if (p.startsWith('/notes/')) {
-                        const id = trim(p.slice('/notes/'.length));
-                        return path.join(root, 'src', 'content', 'notes', id + '.md');
                     }
                     if (p === '/about/' || p === '/about') {
                         return path.join(root, 'src', 'content', 'pages', 'about.md');
@@ -89,7 +84,6 @@ export default defineConfig({
                 return data;
             },
         }),
-        pagefind(),
         ...(WITH_PURGECSS ? [purgecss()] : []),
         // Compress built assets to .br/.gz for optimal delivery
         compressor(),

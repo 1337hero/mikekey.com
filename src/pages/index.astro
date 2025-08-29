@@ -3,21 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import { Icon } from "astro-icon/components";
-import HeroImg from "../assets/hero.png";
-import placeholder1 from "../assets/blog-placeholder-1.jpg";
-import placeholder2 from "../assets/blog-placeholder-2.jpg";
-import placeholder3 from "../assets/blog-placeholder-3.jpg";
-import placeholder4 from "../assets/blog-placeholder-4.jpg";
-import placeholder5 from "../assets/blog-placeholder-5.jpg";
+import HeroImg from "../assets/images/hero.png";
 import { getCollection } from "astro:content";
-
-const placeholders = [
-  placeholder1,
-  placeholder2,
-  placeholder3,
-  placeholder4,
-  placeholder5,
-];
 
 const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -37,8 +24,8 @@ const posts = (await getCollection("blog"))
     <div class="container-content">
       <div class="flex items-center justify-between mb-12">
         <div>
-          <h2 class="text-3xl md:text-4xl font-display font-bold mb-2">
-            Most Recent Posts
+          <h2 class="font-display font-bold text-step-3 mb-2">
+            Latest Muses
           </h2>
           <p>
             Thoughts on business, life, and everything in between
@@ -80,16 +67,6 @@ const posts = (await getCollection("blog"))
                   />
                 </div>
               )}
-              {!post.data.heroImage && (
-                <div class="aspect-video">
-                  <img
-                    src={placeholders[index % placeholders.length].src}
-                    alt={post.data.title}
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-              )}
-
               <div class="p-6">
                 <div class="flex items-center gap-2 mb-3">
                   <time class="text-xs">
@@ -101,7 +78,7 @@ const posts = (await getCollection("blog"))
                   </time>
                 </div>
 
-                <h3 class="text-xl font-display font-bold mb-2 line-clamp-2">
+                <h3 class="font-display font-bold text-step-2 mb-2 line-clamp-2">
                   <a href={`/blog/${post.id}`} class="hover:underline">
                     {post.data.title}
                   </a>
@@ -161,17 +138,17 @@ const posts = (await getCollection("blog"))
   <section class="py-20">
     <div class="container-content">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">
+        <h2 class="font-display font-bold text-step-3 mb-6">
           A bit about myself
         </h2>
-        <p class="text-lg leading-relaxed mb-8">
+        <p class="leading-standard mb-8">
           This site is my little corner of the internet — a place where I've
           been writing, tinkering, and experimenting for years. It's gone
           through a few lives already: from WordPress in the early blogging
           days, to Jekyll for that developer control, and now Astro where I'm
           bringing old content back to life and mixing it with new ideas.
         </p>
-        <p class="text-lg leading-relaxed">
+        <p class="leading-standard">
           I think of mk3y.com as both a personal journal and a public lab
           notebook — a place to explore ideas, share lessons learned, and
           occasionally break things in public.
@@ -182,10 +159,10 @@ const posts = (await getCollection("blog"))
   <section class="py-20">
     <div class="container-content">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-display font-bold mb-6 uppercase">
+        <h2 class="font-display font-bold text-step-3 mb-6 uppercase">
           Me around the web
         </h2>
-        <p class="text-lg leading-relaxed mb-8">
+        <p class="leading-standard mb-8">
           You can find me across a few other digital neighborhoods. Feel free to
           connect, share, or just explore.
         </p>

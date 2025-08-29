@@ -16,7 +16,7 @@ const { title, description, date, updatedDate, heroImage } =
   Astro.props as Props;
 ---
 
-<Layout title={title} description={description ?? ""}>
+<Layout title={title} description={description ?? ""} image={heroImage}>
   <section class="py-10 md:py-12">
     <div class="container-content">
       {heroImage && (
@@ -27,7 +27,7 @@ const { title, description, date, updatedDate, heroImage } =
 
       <article>
         <header class="mb-6">
-          <h1 class="text-3xl md:text-4xl font-display font-bold mb-2">
+          <h1 class="font-display font-bold text-step-3 mb-2">
             {title}
           </h1>
           <div class="text-sm">

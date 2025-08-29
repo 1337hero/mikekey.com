@@ -2,7 +2,7 @@
 title: "About Me"
 description: "A short bio and what I'm up to."
 date: "2021-08-08"
-heroImage: "../../assets/blog-placeholder-about.jpg"
+heroImage: "../../assets/images/blog/blog-placeholder-about.jpg"
 ---
 
 Hi, I’m Mike.

@@ -1,32 +1,26 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import ThemeToggle from "./ThemeToggle.astro";
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 ---
 
 <header
-  class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 flex flex-row justify-between items-center p-4"
+  class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 flex flex-row justify-between items-center p-8 py-2"
 >
-  <h2 class="">
-    <a href="/" class="flex items-center">
-      <span class="">M</span>
-      <span class="">K</span>
-    </a>
-  </h2>
-  <nav class="flex items-center gap-4">
-      <HeaderLink href="/" aria-label="Home">
-        <Icon name="mdi:home" size={20} aria-hidden="true" />
-        <span class="sr-only">Home</span>
-      </HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/notes">Notes</HeaderLink>
-      <HeaderLink href="/now">Now</HeaderLink>
-      <HeaderLink href="/search" aria-label="Search">
-        <Icon name="mdi:magnify" size={20} aria-hidden="true" />
-        <span class="sr-only">Search</span>
-      </HeaderLink>
-      <!-- <HeaderLink href="https://1337hero.com/" target="_blank">Hire Me</HeaderLink> -->
-      <ThemeToggle />
+  <a href="/" class="font-display font-bold uppercase flex items-center">
+    <span>M</span>
+    <span>K</span>
+  </a>
+
+  <nav class="flex items-center gap-6 font-display">
+    <HeaderLink href="/" aria-label="Home">
+      <Icon name="mdi:home" aria-hidden="true" size={42} class="p-2"/>
+      <span class="sr-only">Home</span>
+    </HeaderLink>
+    <HeaderLink href="/blog">Blog</HeaderLink>
+    <HeaderLink href="/now">Now</HeaderLink>
+    <HeaderLink href="/about">About</HeaderLink>
+    <HeaderLink href="https://1337hero.com/" target="_blank">Hire Me</HeaderLink>
+    <ThemeToggle />
   </nav>
 </header>

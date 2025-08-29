@@ -1,49 +1,40 @@
 ---
 title: "On Turning 35..."
 date: 2017-07-13
+description: "Lately, as the years stack up, I've been diving deeper into self-reflection. Mapping out the road ahead, replaying screw-ups, and tallying wins versus the ones that got away."
+heroImage: '../../assets/images/blog/blog-placeholder-2.jpg'
 ---
 
+Just hit 35—another lap around the sun without kicking the bucket. High-five to me. 
 
-Recently I celebrated my 35th year of not dying. Congratulations self.
+Lately, as the years stack up, I've been diving deeper into self-reflection. Mapping out the road ahead, replaying screw-ups, and tallying wins versus the ones that got away. **Where the hell will I be at 70?** It's a question that keeps me up. 
 
-As I've gotten older, I find myself spending more time on introspective thought. Contemplating where I'm going. The mistakes I've made, and opportunities both taken and missed. 
+My 20s? Man, I beat myself up over that decade way too much. Pointless, since you can't rewrite history. But damn, that nagging voice says **I squandered prime potential chasing shiny distractions** that meant *zilch* in the end. 
 
-I wonder where I might be in another 35 years.
+**No way I'm repeating that in my 40s**—staring back at my 30s with the same regrets. That's why I've been auditing my life these past weeks: wins, flops, the whole mess.
 
-I often look at my twenties with regret. Something I shouldn't spend time doing. One can't change the past. Yet, there is this lingering feeling that I wasted a lot of my potential. Spent to much time pursuing things in hindsight were unimportant.
+The last five years? A wild ride. 
 
-I don't want to look back in my forties and have the same regrets about my thirties that I do about my twenties. For that reason, I've been taking stock of my failures and successes these past couple of weeks.
+Kicked off my current gig back in 2012, right before turning 30. Career-wise, I've been blessed. My wife and I fell hard for travel, welcomed two amazing girls into the mix, and chased that Airstream dream across the country. After two years of travel we ended up planting roots out West.
 
-A lot has happened in the past five years.
+But yeah, personal slip-ups crept in too. Stuff I need to fix.
 
-I started my current job when in 2012 before my 30th birthday. And I've been fortunate in this career. In that time my wife and I developed our love for traveling. We brought two beautiful girls into the world. And we chased a dream to travel the country in our Airstream. That lead us to moving out west.
+Health's been tanking for a couple years—weight yo-yoing like crazy. Hit a rock-bottom 230 lbs last month.
 
-There is a lot that makes me happy.
+Embarrassing as hell, straight-up shameful. 
 
-But in that, there have still been some personal failings. Things I want to fix. 
+No BS excuses: I eat garbage, skip workouts, and pretend desk life isn't the culprit. If I want change, gotta grind. Simple math. 
 
-My health has been on a downward trajectory for a couple of years. My weight continuously fluctuating. And recently a month ago I hit an all time high of 230lbs. It's embarrassing and shameful.
+I've also known for ages I need to lock down our family's future. Retirement nest egg, college funds for the kids, ditching reliance on the system. 
 
-No real excuses. I eat like shit. Don't exercise, and not as active I used to be (or think I am). My career has me in front of a desk for a better part of the day. And if I want this to change, going to have to put in the work. It's as simple as that.
+For the last few years, I've been chatting with my buddy Shawn about buy-and-hold rentals. For regular folks like us, it's the golden ticket to wealth-building—especially with my skills, creating passive income that doesn't chain me to a J-O-B. 
 
-I've also known for some time that I need to put in the effort to laying down a solid foundation for our families future. 
+It's been on the whiteboard forever, but progress? Sluggish. We purchased our first rental last year, but we're currently living in it. My goal and plan is to expand that and get more into another property. And possibly do our first flip.
 
-You know, adult shit. Like having a retirement. Saving for kids college. Not being dependant on the system.
+Overall, these years have been solid. My big slip? Picking quick dopamine hits over the long game—that could've landed me further ahead. Oh, and the weight? It's literally weighing me down (pun game strong). 
 
-I can't write code forever. Fact of life. We have some savings, but it could be a lot better. Hell, I should be making more money than I am. 
+But this birthday sparked a mindset reset. 
 
-For the last couple of years, I've been conversing with my friend Shawn about buy and hold rental real estate. For an average person, it's the perfect avenue to build wealth. And the only way I can think with my skill set to lay down a foundation for my families future that is not dependent on me working a JOB.
+Time to lock in, crush those big goals, and drop the unchangeable crap.
 
-It's another goal that has been on the white board for the past five years.
-
-But, I'm not as far along in that goal as I want to be. The wife and I only purchased our first rental property this past Septemeber. And right now, we're living in it. So it's not making any money. 
-
-I want that to change in the next five years. No regrets come my 40th.
-
-The past five years have been good. 
-
-My only regrets are choosing instant gratification over delayed gratification. That might of allowed me to be in a better position today. Oh, and my weight. That one is weighing me down. (Pun intended)
-
-But with my birthday I've found a renewed mindset. 
-
-It's time to buckle down and focus on some of my larger goals. And forget about things I can't change.
+**Let's build.**

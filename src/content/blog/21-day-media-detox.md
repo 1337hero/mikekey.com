@@ -1,6 +1,8 @@
 ---
 title: "A 21 Day Social Detox"
 date: 2016-11-17
+description: ''
+heroImage: '../../assets/images/blog/21-day-detox.png'
 ---
 
 

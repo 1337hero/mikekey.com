@@ -1,6 +1,8 @@
 ---
 title: "The Flinch"
 date: 2015-02-02
+description: ''
+heroImage: '../../assets/images/blog/the-flinch.png'
 ---
 
 

@@ -1,6 +1,8 @@
 ---
 title: "5 Warning Signs You Will Stay Poor"
 date: 2009-12-31
+description: ''
+heroImage: '../../assets/images/blog/blog-placeholder-4.jpg'
 ---
 
 If you are living pay check to paycheck and hoping to one day be rich and debt free, consider these 5 Warning Signs that You Will Stay Poor.

@@ -21,10 +21,10 @@ jobs:
 
     env:
       SITE_URL: https://mikekey.com
-      SSH_HOST: ${{ secrets.SSH_HOST }}        # 143.198.155.134
-      SSH_USER: ${{ secrets.SSH_USER }}        # deploy
-      SSH_PORT: ${{ secrets.SSH_PORT }}        # 7989
-      DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}  # /var/www/mikekey.com
+      SSH_HOST: ${{ secrets.SSH_HOST }}    
+      SSH_USER: ${{ secrets.SSH_USER }}
+      SSH_PORT: ${{ secrets.SSH_PORT }}    
+      DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
 
     steps:
       - name: Checkout
@@ -47,7 +47,7 @@ jobs:
       - name: Install deps
         run: bun install --frozen-lockfile
 
-      # Optional build cache (kept, but we still build to guarantee freshness)
+      # Build cache 
       - name: Compute build cache key
         id: cache-key
         run: |
@@ -62,7 +62,7 @@ jobs:
       - name: Build
         run: bun run build   # Astro outputs ./dist
 
-      # ---------- (Nice to have) Upload dist as artifact ----------
+      # ---------- Upload dist as artifact ----------
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:

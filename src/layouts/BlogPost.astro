@@ -20,8 +20,8 @@ const { title, description, date, updatedDate, heroImage } =
   <section class="py-10 md:py-12">
     <div class="container-content">
       {heroImage && (
-        <div class="mb-8">
-          <Image width={1020} height={510} src={heroImage} alt={title} />
+        <div class="w-full mb-8 m-auto flex justify-center">
+          <Image width={"100%"} height={"auto"} src={heroImage} alt={title} />
         </div>
       )}
 

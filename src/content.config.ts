@@ -29,4 +29,20 @@ const pages = defineCollection({
 		}),
 });
 
-export const collections = { blog, pages };
+// collections are exported at the bottom
+
+// Quick notes collection for feed/index-only items
+const notes = defineCollection({
+    loader: glob({ base: './src/content/notes', pattern: '**/*.md' }),
+    schema: () =>
+        z.object({
+            // minimal frontmatter for a quick note
+            date: z.coerce.date(),
+            updatedDate: z.coerce.date().optional(),
+            // optional short summary for RSS description
+            description: z.string().optional(),
+        }),
+});
+
+// Re-export including notes (Astro uses the last export)
+export const collections = { blog, pages, notes };

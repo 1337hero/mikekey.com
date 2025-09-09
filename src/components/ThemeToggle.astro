@@ -1,23 +1,17 @@
 ---
-import DefaultSwitchSound from '../assets/sounds/light-on.mp3';
 import { Icon } from 'astro-icon/components';
 
 export interface Props {
   class?: string;
-  sound?: string;
   size?: number;
 }
 
-const { class: className = '', sound, size = 42 } = Astro.props as Props;
-const audioSrc = sound || DefaultSwitchSound;
+const { class: className = '', size = 42 } = Astro.props as Props;
 ---
 
 <button
   id="theme-toggle"
   type="button"
-  data-theme-switcher
-  data-sound-switch
-  data-sound={audioSrc}
   class={`inline-flex items-center justify-center rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors ${className}`}
   aria-label="Toggle theme"
 >
@@ -25,56 +19,13 @@ const audioSrc = sound || DefaultSwitchSound;
   <Icon name="mdi:weather-night" size={size} class="p-2 hidden dark:block" aria-hidden="true" />
 </button>
 
-<script is:inline type="module">
-  // Lazy-init theme switcher on idle and play a tiny click sound
-  const storageKey = 'theme-preference';
-
-  const setTheme = (mode) => {
-    const root = document.documentElement;
-    if (mode === 'dark') root.classList.add('dark');
-    else root.classList.remove('dark');
-    try { localStorage.setItem(storageKey, mode); } catch (_) {}
-  };
-  const currentTheme = () => (
-    document.documentElement.classList.contains('dark') ? 'dark' : 'light'
-  );
-
-  const schedule = (fn) => (
+<script>
+  import { initThemeToggle } from '../scripts/theme';
+  
+  const schedule = (fn: () => void) => (
     'requestIdleCallback' in window ? window.requestIdleCallback(fn) : setTimeout(fn, 1)
   );
-
-  function initThemeToggle() {
-    const button = document.getElementById('theme-toggle');
-    if (!button || button.dataset.init === 'true') return;
-    button.dataset.init = 'true';
-
-    // Prepare audio (simple HTMLAudioElement for minimal overhead)
-    let clickAudio = null;
-    const src = button.getAttribute('data-sound') || '/sounds/switch.mp3';
-    try {
-      clickAudio = new Audio(src);
-      clickAudio.preload = 'auto';
-    } catch (_) {}
-
-    const updateButton = () => {
-      const isDark = currentTheme() === 'dark';
-      button.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-      button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-    };
-
-    const onClick = () => {
-      const next = currentTheme() === 'dark' ? 'light' : 'dark';
-      setTheme(next);
-      updateButton();
-      if (clickAudio) {
-        try { clickAudio.currentTime = 0; clickAudio.play(); } catch (_) {}
-      }
-    };
-
-    updateButton();
-    button.addEventListener('click', onClick);
-  }
-
+  
   schedule(initThemeToggle);
   document.addEventListener('astro:page-load', () => schedule(initThemeToggle));
 </script>

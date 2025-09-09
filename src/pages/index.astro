@@ -4,31 +4,13 @@ import Hero from "../components/Hero.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import { Icon } from "astro-icon/components";
 import HeroImg from "../assets/images/hero.png";
-import { getCollection, render, type CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
+import { socialLinks } from "../data/social";
 
-const posts = await getCollection("blog");
-const notes = await getCollection("notes");
-
-const noteEntries = await Promise.all(
-  notes.map(async (note) => {
-    const { Content } = await render(note as CollectionEntry<'notes'>);
-    return { ...note, Content };
-  })
-);
-
-type TimelineItem =
-  | { type: 'post'; date: Date; item: CollectionEntry<'blog'> }
-  | { type: 'note'; date: Date; item: (typeof noteEntries)[number] };
-
-const timeline: TimelineItem[] = [
-  ...posts.map((p) => ({ type: 'post', date: p.data.updatedDate ?? p.data.date, item: p })),
-  ...noteEntries.map((n) => ({ type: 'note', date: n.data.updatedDate ?? n.data.date, item: n })),
-]
-  .sort((a, b) => b.date.valueOf() - a.date.valueOf())
+const posts = (await getCollection("blog"))
+  .sort((a, b) => (b.data.updatedDate ?? b.data.date).valueOf() - (a.data.updatedDate ?? a.data.date).valueOf())
   .slice(0, 6);
-
-const noteAnchor = (id: string) => `home-note-${id.replace(/\//g, '-')}`;
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -73,60 +55,48 @@ const noteAnchor = (id: string) => `home-note-${id.replace(/\//g, '-')}`;
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {
-          timeline.map((entry) => (
-            entry.type === 'post' ? (
-              <article class="group bg-gray-200 dark:bg-gray-500 overflow-hidden">
-                <div class="p-6">
-                  <div class="flex items-center gap-2 mb-3">
-                    <time class="text-lg">
-                      <FormattedDate date={entry.item.data.date} />
-                    </time>
-                  </div>
+          posts.map((post) => (
+            <article class="group bg-gray-200 dark:bg-gray-500 overflow-hidden">
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-3">
+                  <time class="text-lg">
+                    <FormattedDate date={post.data.date} />
+                  </time>
+                </div>
 
-                  <h3 class="font-display font-bold text-step-1 mb-2 line-clamp-2">
-                    <a href={`/blog/${entry.item.id}`} class="hover:underline">
-                      {entry.item.data.title}
-                    </a>
-                  </h3>
-
-                  {entry.item.data.description && (
-                    <p class="line-clamp-3 mb-4">
-                      {entry.item.data.description}
-                    </p>
-                  )}
-
-                  <a
-                    href={`/blog/${entry.item.id}`}
-                    class="inline-flex items-center text-2xl font-medium hover:underline group/link"
-                  >
-                    Read more
-                    <svg
-                      class="w-5 h-5 ml-1 transform group-hover/link:translate-x-1 transition-transform"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
+                <h3 class="font-display font-bold text-step-1 mb-2 line-clamp-2">
+                  <a href={`/blog/${post.id}`} class="hover:underline">
+                    {post.data.title}
                   </a>
-                </div>
-              </article>
-            ) : (
-              <article id={noteAnchor(entry.item.id)} class="bg-gray-100 dark:bg-gray-700 rounded-md p-6 border border-gray-200 dark:border-gray-600">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="inline-block text-lg font-bold tracking-wide bg-bright-sun text-gray-900 rounded px-2 py-1">Quick note</span>
-                  <time class="text-lg"><FormattedDate date={entry.item.data.date} /></time>
-                </div>
-                <div class="prose dark:prose-invert max-w-none">
-                  <entry.item.Content />
-                </div>
-              </article>
-            )
+                </h3>
+
+                {post.data.description && (
+                  <p class="line-clamp-3 mb-4">
+                    {post.data.description}
+                  </p>
+                )}
+
+                <a
+                  href={`/blog/${post.id}`}
+                  class="inline-flex items-center text-2xl font-medium hover:underline group/link"
+                >
+                  Read more
+                  <svg
+                    class="w-5 h-5 ml-1 transform group-hover/link:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </article>
           ))
         }
       </div>
@@ -183,33 +153,17 @@ const noteAnchor = (id: string) => `home-note-${id.replace(/\//g, '-')}`;
           connect, share, or just explore.
         </p>
         <div class="flex flex-col justify-center space-x-6">
-          <span>
-            <Icon name="fa7-brands:instagram" size={32} class="inline-block" /> Instagram
-          </span>
-          <span>
-            <Icon name="fa7-brands:youtube" size={32} class="inline-block" /> Youtube
-          </span>
-          <span>
-            <Icon
-              name="fa7-brands:github"
-              size={32}
-              class="inline-block"
-            /> Github</span
-          >
-          <span>
-            <Icon
-              name="fa7-brands:x-twitter"
-              size={32}
-              class="inline-block"
-            /> (formerly Twitter)</span
-          >
-          <span>
-            <Icon
-              name="fa7-brands:linkedin-in"
-              size={32}
-              class="inline-block"
-            /> LinkedIn</span
-          >
+          {socialLinks.map((social) => (
+            <a 
+              href={social.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="hover:underline"
+            >
+              <Icon name={social.icon} size={32} class="inline-block" />
+              {social.name}
+            </a>
+          ))}
         </div>
       </div>
     </div>

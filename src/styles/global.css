@@ -187,28 +187,14 @@ code, pre, kbd, samp {
   font-size: var(--size-step-code);
 }
 
-/* Utilities */
-.font-display { font-family: var(--font-family-display) !important; }
-.font-base { font-family: var(--font-family-base) !important; }
-.font-mono { font-family: var(--font-family-mono) !important; }
-.font-regular { font-weight: var(--font-weight-regular) !important; }
-.font-bold { font-weight: var(--font-weight-bold) !important; }
-.leading-flat { line-height: var(--leading-flat) !important; }
-.leading-fine { line-height: var(--leading-fine) !important; }
-.leading-standard { line-height: var(--leading-standard) !important; }
-.leading-loose { line-height: var(--leading-loose) !important; }
-.tracking-normal { letter-spacing: var(--tracking) !important; }
-.tracking-tight { letter-spacing: var(--tracking-s) !important; }
-.tracking-wide  { letter-spacing: var(--tracking-wide) !important; }
-.text-step-min-3 { font-size: var(--size-step-min-3) !important; }
-.text-step-min-2 { font-size: var(--size-step-min-2) !important; }
-.text-step-min-1 { font-size: var(--size-step-min-1) !important; }
-.text-step-0     { font-size: var(--size-step-0) !important; }
-.text-step-1     { font-size: var(--size-step-1) !important; }
-.text-step-2     { font-size: var(--size-step-2) !important; }
-.text-step-3     { font-size: var(--size-step-3) !important; }
-.text-step-4     { font-size: var(--size-step-4) !important; }
-.text-code       { font-size: var(--size-step-code) !important; }
+/* Custom font utilities for non-Tailwind properties */
+.font-display { font-family: var(--font-family-display); }
+.text-step-0 { font-size: var(--size-step-0); }
+.text-step-1 { font-size: var(--size-step-1); }
+.text-step-2 { font-size: var(--size-step-2); }
+.text-step-3 { font-size: var(--size-step-3); }
+.text-step-4 { font-size: var(--size-step-4); }
+.leading-standard { line-height: var(--leading-standard); }
 
 /* Tailwind Typography plugin integration */
 .prose {

@@ -26,8 +26,8 @@ type TimelineItem =
     };
 
 const timeline: TimelineItem[] = [
-  ...posts.map((p) => ({ type: 'post', date: p.data.updatedDate ?? p.data.date, item: p })),
-  ...noteEntries.map((n) => ({ type: 'note', date: n.data.updatedDate ?? n.data.date, item: n })),
+  ...posts.map((p) => ({ type: 'post' as const, date: p.data.updatedDate ?? p.data.date, item: p })),
+  ...noteEntries.map((n) => ({ type: 'note' as const, date: n.data.updatedDate ?? n.data.date, item: n })),
 ].sort((a, b) => b.date.valueOf() - a.date.valueOf());
 ---
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>

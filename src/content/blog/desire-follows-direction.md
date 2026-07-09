@@ -1,12 +1,11 @@
 ---
 title: "Desire Follows Direction"
 date: 2015-01-19
+heroImage: '../../assets/images/blog/hero-desire-follows-direction.jpg'
 ---
-
-
 Sometimes we get ourselves into a rut, where we just lack the motivation to get things done. We’ve got goals, but no real passion or drive to pursue them. As a consequence of lack of motivation we find it difficult to even start.
 
-But the key to self motivation is **ACTION**. 
+But the key to self motivation is **ACTION**.
 
 Ask yourself, have you ever felt like not doing something, but you did it anyways and then felt better for having done it?
 

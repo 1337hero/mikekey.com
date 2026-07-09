@@ -4,9 +4,7 @@ date: 2015-02-02
 description: ''
 heroImage: '../../assets/images/blog/the-flinch.png'
 ---
-
-
-Being able to tackle a task without self doubt, or backing down is something I think everyone wants to be able to do. And that’s the core idea behind Julien Smith’s book "<a href="http://www.amazon.com/gp/product/B00NLJHGOA/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B00NLJHGOA&linkCode=as2&tag=boldadventcom-20&linkId=TB4M63W7P6RBFTTW" target="_blank">The Flinch</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=boldadventcom-20&l=as2&o=1&a=B00NLJHGOA" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />".
+Being able to tackle a task without self doubt, or backing down is something I think everyone wants to be able to do. And that’s the core idea behind Julien Smith’s book "[The Flinch](http://www.amazon.com/gp/product/B00NLJHGOA/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B00NLJHGOA&linkCode=as2&tag=boldadventcom-20&linkId=TB4M63W7P6RBFTTW)".
 
 ## What is the Flinch?
 
@@ -22,7 +20,7 @@ Julien describes how the flinch is our built in instinct to respond to danger. T
 
 Julien refers to this as our defective “Defective Alarm System” that remains from the past.
 
-> “In your daily life, you might never experience anything dangerous at all. Your life is safe— but you’re flinching anyway. You don’t flinch at bears, because there are none. But you do flinch at the prospect of speaking publicly or joining a gym. You flinch at the doctor’s office. You even flinch for sitcom characters. Anytime there’s potential change, there’s a flinch, whether it’s a threat or not. 
+> “In your daily life, you might never experience anything dangerous at all. Your life is safe— but you’re flinching anyway. You don’t flinch at bears, because there are none. But you do flinch at the prospect of speaking publicly or joining a gym. You flinch at the doctor’s office. You even flinch for sitcom characters. Anytime there’s potential change, there’s a flinch, whether it’s a threat or not.
 
 > You think the flinch is natural, and part of your life, which it is. But have you ever asked yourself why your stomach tenses up and you can’t watch imaginary characters on a television screen do awkward, embarrassing things? You should.”
 
@@ -34,4 +32,4 @@ Julien refers to this as our defective “Defective Alarm System” that remains
 
 The rest of the book goes into further detail about how to recognize your flinch and over come it. And the key to doing is recognizing your own flinch.
 
-The book is an excellent read, that one can read in single sitting. I highly recommend picking up a copy of "<a href="http://www.amazon.com/gp/product/B00NLJHGOA/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B00NLJHGOA&linkCode=as2&tag=boldadventcom-20&linkId=TB4M63W7P6RBFTTW" target="_blank">The Flinch</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=boldadventcom-20&l=as2&o=1&a=B00NLJHGOA" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />" and reading it for yourself.
+The book is an excellent read, that one can read in single sitting. I highly recommend picking up a copy of "[The Flinch](http://www.amazon.com/gp/product/B00NLJHGOA/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B00NLJHGOA&linkCode=as2&tag=boldadventcom-20&linkId=TB4M63W7P6RBFTTW)" and reading it for yourself.

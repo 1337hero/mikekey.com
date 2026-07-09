@@ -1,18 +1,15 @@
 ---
 title: "10 Day Fast - Into the next 95 Days"
 date: 2015-01-26
+heroImage: '../../assets/images/blog/hero-a-10-day-fast.jpg'
 ---
-
-
 Fasting for me has been something I’ve done for years. In my early twenties I often did it without reason. Later I got into multi-day and intermittent fasting for both spiritual and fitness reasons. I’m a big proponent of n=1 or self experimentation.
 
 Over the past few months I haven’t done any serious fasting, beyond 18 to 24 hour intermittent fasts.
 
-As part of my  [100 Days Personal Challenge](https://mk3y.com/the-next-100-days) I’ve decided to launch myself into a full on 10 day water fast. 
+As part of my  [100 Days Personal Challenge](https://mk3y.com/the-next-100-days) I’ve decided to launch myself into a full on 10 day water fast.
 
 My goal here is to enter a state of full ketosis for a few days. To help me get some clarity of thought on a few issues and to strengthen my willpower.
-
-<!--more-->
 
 ## Quick Explainer:
 
@@ -27,16 +24,15 @@ For the next 10 days of this posting, I’ll be in a full water fast. Yes, water
 
 ## Other Thoughts
 
-Tying back into [100 Days Personal Challenge](https://mk3y.com/the-next-100-days) I’m going to be reading two books on the subject of Willpower and determination. 
+Tying back into [100 Days Personal Challenge](https://mk3y.com/the-next-100-days) I’m going to be reading two books on the subject of Willpower and determination.
 
 They are:
 
-<a href="http://www.amazon.com/gp/product/B00NLJHGOA/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B00NLJHGOA&linkCode=as2&tag=boldadventcom-20&linkId=YVG4FCQYHCBS7YMR" target="_blank">The Flinch - By: Julien Smith</a>
+[The Flinch - By: Julien Smith](http://www.amazon.com/gp/product/B00NLJHGOA/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B00NLJHGOA&linkCode=as2&tag=boldadventcom-20&linkId=YVG4FCQYHCBS7YMR)
 
-<a href="http://www.amazon.com/gp/product/0143122231/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0143122231&linkCode=as2&tag=boldadventcom-20&linkId=ETZ6HJLXH33RRTK3" target="_blank">Willpower: Rediscovering the Greatest Human Strength - By: Roy Baumeister</a>
+[Willpower: Rediscovering the Greatest Human Strength - By: Roy Baumeister](http://www.amazon.com/gp/product/0143122231/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0143122231&linkCode=as2&tag=boldadventcom-20&linkId=ETZ6HJLXH33RRTK3)
 
 Of course, I’ll be posting my experiences during this experiment to the site.
-
 
 *Sources*
 [1](https://www.psychologytoday.com/blog/evolutionary-psychiatry/201104/your-brain-ketones)

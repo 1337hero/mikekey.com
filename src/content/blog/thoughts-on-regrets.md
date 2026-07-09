@@ -1,13 +1,11 @@
 ---
 title: "Thoughts on regrets"
 date: 2014-12-31
+heroImage: '../../assets/images/blog/hero-thoughts-on-regrets.jpg'
 ---
-
-
-
 To much time, spent regretting things not done. That's how I look back at 2014.
 
-For all I accomplished this year, there are things I regret not getting done. Choices made that have delayed goals and dreams. 
+For all I accomplished this year, there are things I regret not getting done. Choices made that have delayed goals and dreams.
 
 Failure to get my weight under control. Failure to meet my goals for my freelance business. Failure to get this site back up in order. Failure with our BoldAndAdventurous project. And a dozen other minor personal failures this year.
 

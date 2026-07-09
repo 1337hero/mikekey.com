@@ -1,20 +1,17 @@
 ---
 title: "Big Waves of Change"
 date: 2015-02-27
+heroImage: '../../assets/images/blog/hero-big-waves-of-change.jpg'
 ---
+In 64 days my family is hitting the road, and moving from Florida. And in 32 days our second daughter will enter the world.
 
+Where are we moving to? Enter: [BoldandAdventurous.com](http://boldandadventurous.com) - I’ve always had a passion for the outdoors and adventure. For a few years now we’ve toyed with the idea of selling everything we own and traveling the country. But it always seemed, unrealistic, until now.
 
-In 64 days my family is hitting the road, and moving from Florida. And in 32 days our second daughter will enter the world. 
-
-Where are we moving to? Enter: [BoldandAdventurous.com](http://boldandadventurous.com) - I’ve always had a passion for the outdoors and adventure. For a few years now we’ve toyed with the idea of selling everything we own and traveling the country. But it always seemed, unrealistic, until now. 
-
-When our first daughter was born, my wife and I began to reevaluate the direction of our lives. One word kept surfacing in my mind, over and over. 
+When our first daughter was born, my wife and I began to reevaluate the direction of our lives. One word kept surfacing in my mind, over and over.
 
 ###MEDICORE.
 
-<!--more-->
-
-We didn’t want to just live for the weekend, ship our kids off to day care and do the suburbia thing. 
+We didn’t want to just live for the weekend, ship our kids off to day care and do the suburbia thing.
 
 During my wife’s maternity leave it became clear she did not want to go back to work. I was completely against shipping our child off to some day care. We were in agreement, she’d stay home.
 

@@ -1,10 +1,8 @@
 ---
 title: "Goodbye Blog Comments"
 date: 2015-01-12
+heroImage: '../../assets/images/blog/hero-good-bye-comments.jpg'
 ---
-
-
-
 Recently I switch from WordPress to Jekyll.  During that time this site has been without comments. My intent moving forward was to move some of those conversations Disqus.
 
 After not much thought, I've decided against it completely.

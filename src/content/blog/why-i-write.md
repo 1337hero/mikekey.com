@@ -1,9 +1,8 @@
 ---
 title: "Why I am Writing"
 date: 2015-01-07
+heroImage: '../../assets/images/blog/hero-why-i-write.jpg'
 ---
-
-
 Hi. I'm Mike.
 
 I'm a husband, father, adventurer and wisdom seeker.
@@ -19,13 +18,3 @@ The best way to do this is to read a lot. And try new things, with a heavy dose 
 Why do this? *Charlie Munger* said it best:
 
 > The best thing a human being can do is to help another human being know more.
-
-
-
-
-
-
-
-
-
-

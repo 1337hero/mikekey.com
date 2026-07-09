@@ -1,12 +1,11 @@
 ---
 title: "Urgency Vs Importance"
 date: 2015-01-04
+heroImage: '../../assets/images/blog/hero-urgency-vs-importance.jpg'
 ---
-
-
 As of late I have been stressed out, suffering from a lot of self inflicted regret. Regret that I'm not getting things done.
 
-Not getting things done has been a bit of a problem in 2014. 
+Not getting things done has been a bit of a problem in 2014.
 
 Over the holiday we took the Airstream up to Ocala and I set my mind to working on a few projects.
 

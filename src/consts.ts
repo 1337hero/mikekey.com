@@ -1,3 +1,3 @@
 // Constants
-export const SITE_TITLE = 'Mike Key — AI Evals, Local Inference & Agent Tooling';
-export const SITE_DESCRIPTION = 'Engineer making AI software prove it works. Essays, bench reports, and build logs.';
+export const SITE_TITLE = 'Mike Key — Local LLMs, AI Agents & The Rigs to Run Them';
+export const SITE_DESCRIPTION = 'Senior software engineer going hard on local AI. Local LLMs, AI agents, and the rigs to run them.';

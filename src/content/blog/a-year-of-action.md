@@ -1,12 +1,11 @@
 ---
 title: "A Year of Action"
 date: 2015-01-01
+heroImage: '../../assets/images/blog/hero-a-year-of-action.jpg'
 ---
-
-
 What inspired men like Hemingway and Teddy Roosevelt to  do and experience more in life than most of us would even dare to in our dreams? Why is it that so few do, while millions more dream, think, and wish?
 
-Roosevelt. Hemingway. Napoleon. Pressfield. Schwarzennegar. The list could go on for hours. 
+Roosevelt. Hemingway. Napoleon. Pressfield. Schwarzennegar. The list could go on for hours.
 
 This question has been gnawing at my mind all night.
 
@@ -24,7 +23,7 @@ We think about traveling, but never set foot on the plane because of the multitu
 
 Who are we to say what can and can’t be?
 
-**Fact:** ***We limit ourselves by worries and fear. We don’t set high enough goals. And we wish far more than we do.***
+** Fact:*We limit ourselves by worries and fear. We don’t set high enough goals. And we wish far more than we do. ***
 
 As I think about that initial question, “*What makes the great people in history great?*” It’s action, and it’s a belief, no, an understanding that there isn’t a whole lot that is impossible. If you’re willing to do more work than anyone. If you’re willing to dedicate yourself more than anyone, you can pretty much do anything you want to do.
 
@@ -33,7 +32,3 @@ This moment, whenever you’re reading this, wherever you are, is the moment whe
 I've let worries and fear keep me from truly living, and my actions have been small and safe. **No more, not this year**.
 
 Besides, I've written about it in the past, [Action cures any fears](http://mk3y.com/action-cures-fear/).
-
-
-
-

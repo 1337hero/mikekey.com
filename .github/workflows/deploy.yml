@@ -3,6 +3,7 @@ name: Deploy My Astro Site
 on:
   push:
     branches: [ "master" ]
+  workflow_dispatch:
 
 concurrency:
   group: mikekey.com-prod

@@ -2,18 +2,18 @@
 ---
 
 <script is:inline>
-  // Minimal, FOUC-safe theme application
+  // Minimal, FOUC-safe theme application — survives view transitions
   (() => {
-    try {
-      const storageKey = 'theme-preference';
-      const stored = localStorage.getItem(storageKey);
-      const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      const theme = stored || system;
-      const root = document.documentElement;
-      if (theme === 'dark') root.classList.add('dark');
-      else root.classList.remove('dark');
-    } catch (_) {
-      // Ignore storage access errors
-    }
+    const applyTheme = () => {
+      try {
+        const stored = localStorage.getItem('theme-preference');
+        const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.classList.toggle('dark', (stored || system) === 'dark');
+      } catch (_) {
+        // Ignore storage access errors
+      }
+    };
+    applyTheme();
+    document.addEventListener('astro:after-swap', applyTheme);
   })();
-  </script>
+</script>

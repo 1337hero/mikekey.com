@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
 import type { ImageMetadata } from "astro";
 import FallbackImage from "../assets/images/hero.png";
 import { SITE_TITLE } from "../consts";
@@ -31,8 +32,8 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Fonts: preload critical local font files -->
-<link rel="preload" href="/fonts/outfit/outfit-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/atkinson/atkinson-hyperlegible-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/charter/charter_regular.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -54,3 +55,5 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description ?? ''} />
 <meta property="twitter:image" content={new URL(image.src, Astro.url)} />
+
+<ClientRouter />

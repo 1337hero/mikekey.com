@@ -1,17 +1,21 @@
 ---
+import DefaultSwitchSound from '../assets/sounds/light-on.mp3';
 import { Icon } from 'astro-icon/components';
 
 export interface Props {
   class?: string;
+  sound?: string;
   size?: number;
 }
 
-const { class: className = '', size = 42 } = Astro.props as Props;
+const { class: className = '', sound, size = 42 } = Astro.props as Props;
+const audioSrc = sound || DefaultSwitchSound;
 ---
 
 <button
   id="theme-toggle"
   type="button"
+  data-sound={audioSrc}
   class={`inline-flex items-center justify-center rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors ${className}`}
   aria-label="Toggle theme"
 >

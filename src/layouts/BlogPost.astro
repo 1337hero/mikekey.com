@@ -19,9 +19,10 @@ const { title, description, date, updatedDate, heroImage } =
 <Layout title={title} description={description ?? ""} image={heroImage}>
   <section class="py-10 md:py-12">
     <div class="container-content">
+      <div class="mx-auto max-w-[1200px]">
       {heroImage && (
-        <div class="w-full mb-8 m-auto flex justify-center">
-          <Image width={1200} height={630} src={heroImage} alt={title} />
+        <div class="mb-8">
+          <Image width={1200} height={630} src={heroImage} alt={title} class="w-full h-auto" />
         </div>
       )}
 
@@ -45,6 +46,7 @@ const { title, description, date, updatedDate, heroImage } =
           <slot />
         </div>
       </article>
+      </div>
     </div>
   </section>
 </Layout>

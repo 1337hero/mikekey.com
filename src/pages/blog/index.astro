@@ -1,89 +1,98 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Layout from "../../layouts/Layout.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import { readingTime } from "../../utils/readingTime";
 
 const posts = await getCollection("blog");
 const notes = await getCollection("notes");
 
 const noteEntries = await Promise.all(
   notes.map(async (note) => {
-    const { Content } = await render(note as CollectionEntry<'notes'>);
+    const { Content } = await render(note as CollectionEntry<"notes">);
     return { ...note, Content };
   })
 );
 
-const noteAnchor = (id: string) => `note-${id.replace(/\//g, '-')}/`;
+const noteAnchor = (id: string) => `note-${id.replace(/\//g, "-")}/`;
 
 type TimelineItem =
-  | { type: 'post'; date: Date; item: CollectionEntry<'blog'> }
-  | {
-      type: 'note';
-      date: Date;
-      item: (typeof noteEntries)[number];
-    };
+  | { type: "post"; date: Date; item: CollectionEntry<"blog"> }
+  | { type: "note"; date: Date; item: (typeof noteEntries)[number] };
 
 const timeline: TimelineItem[] = [
-  ...posts.map((p) => ({ type: 'post' as const, date: p.data.updatedDate ?? p.data.date, item: p })),
-  ...noteEntries.map((n) => ({ type: 'note' as const, date: n.data.updatedDate ?? n.data.date, item: n })),
+  ...posts.map((p) => ({ type: "post" as const, date: p.data.updatedDate ?? p.data.date, item: p })),
+  ...noteEntries.map((n) => ({ type: "note" as const, date: n.data.updatedDate ?? n.data.date, item: n })),
 ].sort((a, b) => b.date.valueOf() - a.date.valueOf());
+
+const byYear = [...Map.groupBy(timeline, (entry) => entry.date.getFullYear()).entries()].sort(
+  (a, b) => b[0] - a[0]
+);
 ---
+
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <section class="py-20">
+  <section class="py-12 md:py-16">
     <div class="container-content">
-      <div class="flex items-center justify-between mb-12">
-        <div>
-          <h2 class="font-display font-bold text-step-4 mb-2">
-            All Posts
-          </h2>
-          <p>Every post in the archive</p>
-        </div>
-      </div>
+      <header class="mb-8 border-b border-gray-200 dark:border-gray-700 pb-8 md:mb-12">
+        <p class="meta-label mb-4 text-gray-400">
+          <span class="mr-2 inline-block size-2 bg-bright-sun" aria-hidden="true"></span>The Archive —
+          {posts.length} Essays / {notes.length} {notes.length === 1 ? "Note" : "Notes"}
+        </p>
+        <h1 class="font-display font-bold text-step-4">
+          All Posts<span class="text-bright-sun">.</span>
+        </h1>
+      </header>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-        {
-          timeline.map((entry, index) => (
-            entry.type === 'post' ? (
-              <article
-                class="group bg-white dark:bg-gray-600 overflow-hidden"
-                style={`animation-delay: ${index * 100}ms`}
-              >
-                <a href={`/blog/${entry.item.id}/`} class="block">
-                  {entry.item.data.heroImage && (
-                    <Image
-                      width={720}
-                      height={360}
-                      src={entry.item.data.heroImage}
-                      alt={entry.item.data.title}
-                    />
-                  )}
-
-                  <div class="p-4">
-                    <time class="block text-xs mb-1">
-                      <FormattedDate date={entry.item.data.date} />
-                    </time>
-                    <h3 class="font-display font-bold text-step-2 transition-colors">
-                      {entry.item.data.title}
-                    </h3>
-                  </div>
-                </a>
-              </article>
-            ) : (
-              <article id={noteAnchor(entry.item.id)} class="bg-gray-100 dark:bg-gray-700 rounded-md p-4 border border-gray-200 dark:border-gray-600">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="inline-block text-xs font-bold tracking-wide bg-bright-sun text-gray-900 rounded px-2 py-1">Quick note</span>
-                  <time class="text-xs"><FormattedDate date={entry.item.data.date} /></time>
-                </div>
-                <div class="prose dark:prose-invert max-w-none">
-                  <entry.item.Content />
-                </div>
-              </article>
-            )
-          ))
-        }
-      </div>
+      {
+        byYear.map(([year, entries]) => (
+          <div class="grid gap-6 border-b border-gray-200 dark:border-gray-700 py-8 md:grid-cols-12 md:gap-10 md:py-12">
+            <div class="md:col-span-3">
+              <h2 class="sticky top-8 font-display font-bold text-step-3 text-gray-300 dark:text-gray-600" data-reveal>
+                {year}
+              </h2>
+            </div>
+            <div class="md:col-span-9" data-reveal-group>
+              {entries.map((entry) =>
+                entry.type === "post" ? (
+                  <article data-reveal-item>
+                    <a
+                      href={`/blog/${entry.item.id}/`}
+                      class="index-row group flex flex-col gap-1 border-b border-gray-200 dark:border-gray-700 py-5 last:border-b-0 md:flex-row md:items-baseline md:justify-between md:gap-8"
+                    >
+                      <h3 class="min-w-0 font-display font-bold text-step-1 transition-colors duration-200 group-hover:text-accent-safe">
+                        {entry.item.data.title}
+                      </h3>
+                      <div class="meta-label flex shrink-0 items-center gap-4 text-gray-400">
+                        <FormattedDate date={entry.item.data.date} />
+                        <span aria-hidden="true">·</span>
+                        <span>{readingTime(entry.item.body)}&nbsp;min</span>
+                        <span class="index-arrow text-accent-safe" aria-hidden="true">→</span>
+                      </div>
+                    </a>
+                  </article>
+                ) : (
+                  <article
+                    id={noteAnchor(entry.item.id)}
+                    class="my-5 border-l-2 border-bright-sun bg-gray-100 dark:bg-gray-900 p-5"
+                    data-reveal-item
+                  >
+                    <div class="mb-3 flex items-center justify-between gap-4">
+                      <span class="meta-label text-accent-safe">✳ Quick Note</span>
+                      <time class="meta-label text-gray-400">
+                        <FormattedDate date={entry.item.data.date} />
+                      </time>
+                    </div>
+                    <div class="prose dark:prose-invert max-w-none">
+                      <entry.item.Content />
+                    </div>
+                  </article>
+                )
+              )}
+            </div>
+          </div>
+        ))
+      }
     </div>
   </section>
 </Layout>
